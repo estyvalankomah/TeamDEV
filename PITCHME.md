@@ -1,7 +1,7 @@
 ### Introducing
 ### Ejuma
 ![logo](static/images/ejuma1.PNG)
- by TeamDEV
+### by TeamDEV
 
 +++
 ---
@@ -26,7 +26,7 @@ To create a platform freelancers and employers where people can apply for short 
 
 +++
 ---
-### Technologies for building the web app
+#### Technologies for building the web app
 * Python
 * Flask
 * MySQL
