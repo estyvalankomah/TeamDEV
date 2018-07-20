@@ -38,4 +38,4 @@ To create a platform freelancers and employers where people can apply for short 
 ---
 #### Demonstration
 
-Click [here](ejuma.herokuapp.com) to visit our site
+Click [here](https://ejuma.herokuapp.com) to visit our site
