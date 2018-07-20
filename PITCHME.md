@@ -35,3 +35,7 @@ To create a platform freelancers and employers where people can apply for short 
 * Jquery
 * Bootstrap
 * Ajax
+---
+#### Demonstration
+
+Click [here](ejuma.herokuapp.com) to visit our site
