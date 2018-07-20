@@ -2,6 +2,8 @@ from flask import Flask, request, flash, url_for, redirect, render_template, ses
 from flask_sqlalchemy import SQLAlchemy
 import os
 from functools import wraps
+from sqlalchemy import or_
+
 
 #forms imports
 from forms import SignUpForm, LoginForm, CommentForm, JobPostForm
@@ -80,6 +82,7 @@ def view_profile(user_id):
     return render_template('profile.html', user=user)
 
 
+
 @app.route('/profile/<user_id>/edit', methods = ['GET', 'POST'])
 @login_required
 def edit_profile(user_id):
@@ -87,30 +90,39 @@ def edit_profile(user_id):
     if int(user_id) != int(session['user']['id']):
 	    flash('Access Denied! You cannot Edit this profile', 'danger')
 	    return redirect(url_for('view_profile', user_id=user_id))
-    user_get = db.session.query(models.Freelancer).get(int(user_id))
+    user_get = db.session.query(models.Freelancer).filter_by(id=int(user_id))
     form = SignUpForm(obj=user_get)
-    if request.method == 'POST' and form.validate_on_submit():
-        user = models.Freelancer(request.form['firstname'],
-            request.form['lastname'],
-            request.form['contact'],
-            request.form['skills'],
-            request.form['dob'],
-            request.form['status'],
-            request.form['email'],
-            sha256_crypt.encrypt(request.form['password']),
-            )
-        db.session.delete(user_get)
-        db.session.commit()
-        db.session.add(user)
+    if request.method == 'POST':
+        user = {'firstname':request.form['firstname'],
+            'lastname':request.form['lastname'],
+            'contact':request.form['contact'],
+            'skills':request.form['skills'],
+            'dob':request.form['dob'],
+            'status':request.form['status'],
+            'email':request.form['email'],
+            'password':form.password.data,
+            }
+        
+        user_get.update(user)
         db.session.commit()
         flash('Profile Data updated', 'success')
         return redirect(url_for('view_profile', user_id=user_id))
     return render_template('edit_profile.html', form=form)
 
+@app.route('/jobs/search', methods=['GET', 'POST'])
 @app.route('/jobs')
 def jobs_index():
-	job_list = user = db.session.query(models.Job_postings).all()
-	return render_template('jobindex.html', job_list=job_list)
+    if request.method == 'POST':
+        heading = 'Search Results'
+        string = request.form['query']
+        job_list = db.session.query(models.Job_postings).filter(or_(
+                        Job_postings.title.contains(string),
+                        Job_postings.title.contains(string)
+                        ))
+    else:
+        heading = 'Recent Job Post'
+        job_list = user = db.session.query(models.Job_postings).all()
+    return render_template('jobindex.html', job_list=job_list, heading=heading)
 
 @app.route('/jobs/<job_id>')
 def job_detail(job_id):
@@ -135,6 +147,7 @@ def new_job():
         flash('successfully added new job', 'success')
         return redirect(url_for('jobs_index'))
     return render_template('new_job.html', form=form)
+
 
 
 @app.route('/about')

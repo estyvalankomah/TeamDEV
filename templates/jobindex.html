@@ -19,15 +19,17 @@
                 <div class="container">
                     <div class="row">
 						<div class="col-md-9">
-                            <form role="form" class="form-inline">
+                            <form role="form" class="form-inline" action='/jobs/search' method='POST'>
                                 <div class="form-group">
                                     <input type="text" name="query" class="form-control" id="unam" placeholder="Search for a job here">
                                 </div>
-                                <button type="submit" class="btn btn-primary"><a href="/jobs/search">Go!</button>
+                                <button type="submit" class="btn btn-primary">Go!</button>
                             </form>					
                         </div>
                         <div class="col-md-3">
-							<button type="submit" class="btn btn-primary"><a href="{{ url_for('new_job.html') }}">Add a new job</a></button>
+							<button type="submit" class="btn btn-success-outline"><a href="{{ url_for('new_job') }}">
+								<i class='fa fa-cross' ></i></i> Add a new job</a>
+								</button>
 						</div>
                      </div>   
                 </div>
