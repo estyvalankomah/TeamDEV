@@ -29,7 +29,7 @@ To create a platform freelancers and employers where people can apply for short 
 #### Technologies for building the web app
 * Python
 * Flask
-* MySQL
+* SQLAlchemy
 * HTML
 * CSS
 * Jquery
