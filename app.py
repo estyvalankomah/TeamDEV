@@ -123,7 +123,7 @@ def new_job():
     form = JobPostForm()
     if request.method == 'POST' and form.validate_on_submit():
         job = models.Job_postings(
-            session.user.id,#employer_id
+            session['user']['id'],#employer_id
             request.form['amount'],
             request.form['title'],
             request.form['description'],
