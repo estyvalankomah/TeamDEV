@@ -1,0 +1,12 @@
+#ignore pycache files
+__pycache__/
+
+#ignore binary
+*.py[cod]
+
+#DATABASE
+*.sqlite3
+*.db
+
+#migrations sqlite impl
+

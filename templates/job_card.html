@@ -1,0 +1,14 @@
+<!-- job card, accepts job dict as argument -->
+
+<div class="card-group">
+	<div class="card border-secondary mb-3" style="max-width:50rem;" >
+	<div class="card-header">
+		<h3 class="card-text text-info"><a href="/jobs/{{ Job_postings.id }}"> {{ Job_postings.title }} </a></h3>
+	</div>	
+  <div class="card-body">
+     <p class="card-text">{{ Job_postings.description }}</p>
+     <p class="card-text">{{ Job_postings.no_of_people }} people are needed for the job</p>
+	 <p class="card-text">Job duration is {{ Job_postings.duration }}</p>	  
+  </div>
+</div>
+</div>

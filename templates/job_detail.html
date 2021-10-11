@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Ejuma</title>
+{% endblock %}
+
+{% block navbar_type1 %}{% endblock %}{% block navbar_type %}{% endblock %}
+
+{% block content %}
+
+
+<section>
+<div class="container">
+<div class="content-section" style='padding-left:20%; padding-right:20%'>
+
+	<h1 style="text-align:center;">{{ Job_postings.title }}</h1>
+
+	<div class="row">
+	<div class="col-sm-6">
+		Wage is {{ Job_postings.amount }}
+	</div>
+
+	<div class="col-sm-6">
+		Job duration is {{ Job_postings.duration }}
+	</div><br>
+	</div>
+	
+	<p> {{ Job_postings.description }} </p>
+	
+	<p> {{ Job_postings.no_of_people }} people are needed for the job </p>
+	
+	  <input type="submit" value="Apply" class="btn btn-primary">
+
+</div>
+</div>
+</section>
+{%  endblock %}

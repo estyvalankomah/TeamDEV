@@ -1,0 +1,60 @@
+
+"""
+class Employer(db.Model):
+    id = db.Column('id', db.Integer, primary_key = True)
+    companyname = db.Column(db.String(100))
+    companydescription = db.Column(db.String(50))
+    email = db.Column(db.String(200)) #to be changed to the propper fields
+    contact = db.Column(db.String(32)) #to be changed to the propper fields
+
+    def __init__(self, companyname, companydescription, email, contact):
+        self.companyname = companyname
+        self.companydescription = companydescription
+        self.email = email
+        self.contact = contact
+
+
+
+class Comments(db.Model):
+    id = db.Column('id', db.Integer, primary_key = True)
+    employer_id = db.Column(db.Integer,
+        nullable=False)
+    employ = db.relationship('Employer',
+        backref=db.backref('comments', lazy=True))
+    freelancer_id = db.Column(db.Integer,
+        nullable=False)
+    free = db.relationship('Freelancer',
+        backref=db.backref('comments', lazy=True))
+    rating = db.Column(db.Integer)
+    comment = db.Column(db.String(100))
+    doc = db.Column(db.DateTime)
+    toc = db.Column(db.DateTime) #to be changed to the propper fields
+
+
+    def __init__(self, employer_id, freelancer_id, rating, comment, doc, toc):
+        self.employer_id = employer_id
+        self.freelancer_id = freelancer_id
+        self.rating = rating
+        self.comment = comment
+        self.doc = doc
+        self.toc = toc
+
+
+class Job_allocation(db.Model):
+    id = db.Column('id', db.Integer, primary_key = True)
+    employer_id = db.Column(db.Integer,
+        nullable=False)
+    emp = db.relationship('Employer',
+        backref=db.backref('job_allocation', lazy=True))
+    freelancer_id = db.Column(db.Integer, 
+        nullable=False)
+    freelancer = db.relationship('Freelancer',
+        backref=db.backref('job_allocation', lazy=True))
+
+
+    def __init__(self, job_id, freelancer_id, employer_id):
+        self.job_id = job_id
+        self.freelancer_id = freelancer_id
+        self.employer_id = employer_id
+"""
+

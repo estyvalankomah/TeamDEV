@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Ejuma | Edit profile</title>
+{% endblock %}
+
+
+{% block navbar_type1 %}{% endblock %}{% block navbar_type %}{% endblock %}
+
+{% block content %}
+
+<section>
+<div class="container">
+{% from "_formhelpers.html" import render_field %}
+
+<div class="content-section well" style='padding-left:20%; padding-right:20%' >
+<form method="POST" action="">
+    {{ form.csrf_token }}
+    <fieldset class="form-group">
+	<legend class="border-bottom mb-4">Edit Profile</legend>
+	
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				{{ render_field(form.firstname, class="form-control") }}
+			</div>
+   
+			<div class="col-sm-6 form-group">
+				{{ render_field(form.lastname, class="form-control") }}     	
+			</div><br>
+	</div>
+	<div class="form-group">
+	{{ render_field(form.email, class="form-control") }}
+	</div>
+
+    <div class="form-group">
+	{{ render_field(form.contact, class="form-control") }}
+	</div>
+	
+	<div class="form-group">
+	{{ render_field(form.dob, class="form-control") }}
+	</div>
+	
+	<div class="form-group">
+	{{ render_field(form.skills, class="form-control") }}
+	</div>
+	
+	<div class="form-group">
+	{{ render_field(form.status, class="form-control") }}
+	</div>
+	
+
+	</fieldset>
+    <input type="submit" value="Save Changes" class="btn btn-primary">
+</form>
+<a class="ml-2" href="{{ url_for('view_profile', user_id=session.user.id) }}">Cancel Changes</a>	
+</div>
+</div>
+</section>
+{% endblock %}
+

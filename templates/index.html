@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+{% block content %}
+
+        <header id="home">
+            <!-- Carousel -->
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="{{ url_for( 'static', filename= 'images/work.jpg')}}" alt="Bgstudio" />
+
+                        <div class="container caption_area">
+                            <div class="carousel-caption">
+                                <h3>LOOKING FOR </h3>
+                                <h1>FREELANCE JOBS?</h1>
+                                <p>Just join Ejuma today!</p>
+
+                                <a href="/signup" class="banner_btn">Sign Up</a>
+                            </div>					
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{{ url_for( 'static', filename= 'images/worka.jpg')}}" alt="Bgstudio" />
+
+                        <div class="container caption_area">
+                            <div class="carousel-caption">
+                                <h3>CAN'T FIND</h3>
+                                <h1>FREELANCERS?</h1>
+                                <p>Ejuma got you covered!</p>
+
+                                <a href="/signup" class="banner_btn">Sign Up</a>
+                            </div>					
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{{ url_for( 'static', filename= 'images/worked.jpg')}}" alt="Bgstudio" />
+
+                        <div class="container caption_area">
+                            <div class="carousel-caption">
+                                <h3>WHAT ARE THE TOP</h3>
+                                <h1>JOBS AVAILABLE?</h1>
+                                <p>Sign up with us and get top job updates!</p>
+
+                                <a href="/signup" class="banner_btn">Sign Up</a>
+                            </div>					
+                        </div>
+                    </div>
+                </div>
+				<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+				  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				  <span class="sr-only">Next</span>
+				</a>
+			</div>
+            </div><!-- Carousel end-->
+
+        </header><!-- Header end -->
+
+        <!-- About -->
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <div class="heading_area">
+                            <h2>About Ejuma</h2>
+                            <hr />					
+                        </div>
+                    </div>			
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="about_left">
+                            <img src="{{ url_for( 'static', filename= 'images/about_img.jpg') }}" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-md-7"> 
+                        <div class="about_right">
+                            <p><big> Ejuma is a platform that connects individuals looking for short term jobs to the best freelance job offers. Our main target is senior high school graduates. Usually these graduates just stay with plenty of time to waste after writing their final examinations. Instead of just staying home doing nothing or engaging in frivolous activities,they can gain employment in institutions to work for a short period of time. Finding companies that hire freelancers can be a very tedious task. </big></p> 
+							<p><big> This is where Ejuma comes in! We sign up top industries that employ freelancers and people looking for freelance jobs. Job seekers recieve notifications of top jobs available and employers are notified when freelancers seek short term employment in their institutions. </big></p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- container end -->
+
+            <!-- Contact-->
+            <div class="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="contact_content">
+                                <h4>Looking for the latest jobs in town?</h4>	
+								<p>Ejuma bring you the best job offers. We are just a click away!</p>
+                            </div>					
+                        </div>
+                        <div class="col-md-7">
+                            <form role="form" class="form-inline">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="unam" placeholder="Search for a job here">
+                                </div>
+                                <button type="submit" class="btn submit_btn">Go!</button>
+                            </form>					
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Contact end -->
+        </section><!-- About end -->
+
+        <!-- Services -->
+        <section id="services">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="heading_area">
+                            <h2>What we do best</h2>
+                            <hr />
+                            		
+                        </div>
+                    </div>			
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="service employers">
+                            <img src="{{ url_for( 'static', filename= 'images/employericon.jpg')}}" alt=""/>
+
+                            <h4>Connect you to top short term jobs </h4>
+                            <p><big> Looking for a freelance job? The serach is over! Ejuma brings you the best short term job offers you can find. Finding companies that employ freelancers is like going on a wild goose chase - this is not very cool. Ejuma does all the hustle for you. We serve as the platform where individuals seeking short term jobs can reach out to companies that hire freelancers. </big></p>
+                            <!--a href="" class="service_btn get_it_btn">Get it Now</a-->
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="service freelancers">
+                            <img src="{{ url_for( 'static', filename= 'images/jobseekericon.png')}}" alt=""/>
+
+                            <h4>Bring you qualified job seekers</h4>
+                            <p><big> Can't find freelancers to work on a contract or project for your company? Ejuma signs up companies that employ freelancers and notifies them when a user pushes a request to work in their company for a short time. Ejuma connects these companies to qualified and eligible candidates for the jobs available. </big></p>
+                            <!--a href="" class="service_btn learn_btn">Learn More</a-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Services end -->
+
+
+
+        <!-- Work with Us -->
+        <section id="work_us">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1 text-center">
+                        <p class="work_content">Millions of freelancers are being connected to several jobs daily. Ejuma brings you the best job offers you can get. You don't have to while away your time because you can't find a short term job offer. You don't have to be on a wild goose chase all in the name of job hunting either! Just sign up with us. </p>
+                        <a href="/signup" class="work_us_btn">Join Us Today!</a>
+                    </div>			
+                </div>
+            </div>
+        </section><!-- Work with Us end -->
+
+        <!-- Footer -->
+        <footer>
+		
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+            <div class="container text-center">
+                <ul class="list-inline footer_menu">
+                    <li role="presentation"><a href="/home">Home</a></li>
+                    <li role="presentation"><a href="/about">About</a></li>
+                    <li role="presentation"><a href="/signup">New here?</a></li>
+                    <li role="presentation"><a href="#">Team</a></li>
+                </ul>
+
+                <ul class="list-inline social">
+                    <li ><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li ><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li ><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+
+                <div class="footer-copyright text-center">
+                    <p class="wow fadeInRight" data-wow-duration="1s">
+                        <i class="fa fa-copyright"></i>
+                        <a target="_blank" href="http://bootstrapthemes.co">Ejuma</a>
+                        2018. All Rights Reserved
+                    </p>
+                </div>
+
+            </div>
+        </footer><!-- Footer end -->
+
+
+        <!-- scroll up-->
+        <div class="scrollup">
+            <a href="/home"><i class="fa fa-chevron-up"></i></a>
+        </div><!-- End off scroll up-->
+  
+{% endblock %}  
